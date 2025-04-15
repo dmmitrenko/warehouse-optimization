@@ -1,6 +1,8 @@
-﻿namespace WarehouseOptimizer.Contracts.Commands;
+﻿using MediatR;
 
-public class RegisterSKUCommand
+namespace WarehouseOptimizer.Contracts.Commands;
+
+public class RegisterSkuCommand : IRequest
 {
     public string SkuCode { get; set; }
     public decimal Weight { get; set; }

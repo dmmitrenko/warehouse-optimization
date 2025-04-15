@@ -1,7 +1,7 @@
-using WarehouseOptimizer.Worker;
+using WarehouseOptimizer.Worker.ServiceExtensions;
 
 var builder = Host.CreateApplicationBuilder(args);
-builder.Services.AddHostedService<Worker>();
+builder.Services.AddServices(builder.Configuration);
 
 var host = builder.Build();
 host.Run();

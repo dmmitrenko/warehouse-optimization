@@ -38,7 +38,7 @@ public class QueueMessageHandlers
             {
                 QueueNames.UpdateWarehouseCell, async messageJson =>
                 {
-                    var msg = JsonSerializer.Deserialize<RegisterSkuCommand>(messageJson);
+                    var msg = JsonSerializer.Deserialize<UpdateWarehouseCellCommand>(messageJson);
                     logger.LogInformation("[{queueName}] Message received: {message}.", nameof(QueueNames.UpdateWarehouseCell),
                         messageJson);
                 }

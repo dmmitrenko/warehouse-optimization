@@ -1,6 +1,8 @@
-﻿namespace WarehouseOptimizer.Contracts.Commands;
+﻿using MediatR;
 
-public class CalculatePlacementCommand
+namespace WarehouseOptimizer.Contracts.Commands;
+
+public class CalculatePlacementCommand : IRequest
 {
     public string AlgotithmType { get; set; }
 }

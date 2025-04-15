@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WarehouseOptimizer.Domain\WarehouseOptimizer.Domain.csproj" />
+    <ProjectReference Include="..\WarehouseOptimizer.Infrastructure\WarehouseOptimizer.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

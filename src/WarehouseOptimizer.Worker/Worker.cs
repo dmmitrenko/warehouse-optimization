@@ -1,4 +1,5 @@
 using System.Text;
+using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using WarehouseOptimizer.Worker.Queue;
@@ -23,14 +24,18 @@ public class Worker : BackgroundService
 
     public Worker(
         ILogger<Worker> logger,
-        QueueMessageHandlers handlers)
+        QueueMessageHandlers handlers,
+        IOptions<QueueConnectionSettings> connectionSettings)
     {
         _logger = logger;
         _handlers = handlers;
 
         var factory = new ConnectionFactory
         {
-            HostName = "localhost"
+            HostName = connectionSettings.Value.HostName,
+            UserName = connectionSettings.Value.UserName,
+            Password = connectionSettings.Value.Password,
+            VirtualHost = connectionSettings.Value.VirtualHost,
         };
 
         _connection = factory.CreateConnection();

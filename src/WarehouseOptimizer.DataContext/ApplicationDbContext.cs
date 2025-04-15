@@ -10,12 +10,12 @@ public class ApplicationDbContext : DbContext
     {
     }
 
-    public DbSet<SKURecord> SKURecords { get; set; }
+    public DbSet<SkuRecord> SKURecords { get; set; }
     public DbSet<WarehouseCell> WarehouseCell { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<SKURecord>(entity =>
+        modelBuilder.Entity<SkuRecord>(entity =>
         {
             entity.ToTable("SKURecords");
 

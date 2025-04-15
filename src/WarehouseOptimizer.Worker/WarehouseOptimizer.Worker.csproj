@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+<Project Sdk="Microsoft.NET.Sdk.Worker">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -16,10 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ServiceExtensions\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\WarehouseOptimizer.Contracts\WarehouseOptimizer.Contracts.csproj" />
+    <ProjectReference Include="..\WarehouseOptimizer.DataContext\WarehouseOptimizer.DataContext.csproj" />
+    <ProjectReference Include="..\WarehouseOptimizer.Infrastructure\WarehouseOptimizer.Infrastructure.csproj" />
   </ItemGroup>
 </Project>

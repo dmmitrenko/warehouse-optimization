@@ -1,5 +1,7 @@
-﻿namespace WarehouseOptimizer.Contracts.Commands;
+﻿using MediatR;
 
-public class UpdateSkuCommand
+namespace WarehouseOptimizer.Contracts.Commands;
+
+public class UpdateSkuCommand : IRequest
 {
 }

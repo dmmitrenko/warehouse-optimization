@@ -2,6 +2,6 @@
 
 namespace WarehouseOptimizer.Contracts.Commands;
 
-public class RegisterWarehouseCellCommand : IRequest
+public class UpdateWarehouseCellCommand : IRequest
 {
 }
