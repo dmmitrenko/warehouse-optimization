@@ -1,0 +1,6 @@
+@WarehouseOptimizer.API_HostAddress = http://localhost:5055
+
+GET {{WarehouseOptimizer.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
