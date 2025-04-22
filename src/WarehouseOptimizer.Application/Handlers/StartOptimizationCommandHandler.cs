@@ -4,7 +4,7 @@ using WarehouseOptimizer.Infrastructure;
 
 namespace WarehouseOptimizer.Application.Handlers;
 
-class StartOptimizationCommandHandler(IUnitOfWork unitOfWork) : IRequestHandler<CalculatePlacementCommand>
+class StartOptimizationCommandHandler : IRequestHandler<CalculatePlacementCommand>
 {
     public Task Handle(CalculatePlacementCommand request, CancellationToken cancellationToken)
     {

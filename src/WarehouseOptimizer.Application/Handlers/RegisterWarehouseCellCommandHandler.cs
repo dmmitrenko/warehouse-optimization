@@ -1,12 +1,16 @@
 ﻿using MediatR;
+using WarehouseOptimizer.Application.Mapper;
 using WarehouseOptimizer.Contracts.Commands;
+using WarehouseOptimizer.Domain.Models;
+using WarehouseOptimizer.Infrastructure;
 
 namespace WarehouseOptimizer.Application.Handlers;
 
-class RegisterWarehouseCellCommandHandler : IRequestHandler<RegisterWarehouseCellCommand>
+class RegisterWarehouseCellCommandHandler(IRepository<WarehouseCell> repository) : IRequestHandler<RegisterWarehouseCellCommand>
 {
-    public Task Handle(RegisterWarehouseCellCommand request, CancellationToken cancellationToken)
+    public async Task Handle(RegisterWarehouseCellCommand request, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var warehouseCell = request.Map();
+        await repository.AddAsync(warehouseCell);
     }
 }

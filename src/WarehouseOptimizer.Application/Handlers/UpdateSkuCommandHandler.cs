@@ -1,12 +1,26 @@
 ﻿using MediatR;
 using WarehouseOptimizer.Contracts.Commands;
+using WarehouseOptimizer.Infrastructure;
 
 namespace WarehouseOptimizer.Application.Handlers;
 
-public class UpdateSkuCommandHandler : IRequestHandler<UpdateSkuCommand>
+public class UpdateSkuCommandHandler(IRepository<SkuRecord> repository) : IRequestHandler<UpdateSkuCommand>
 {
-    public Task Handle(UpdateSkuCommand request, CancellationToken cancellationToken)
+    public async Task Handle(UpdateSkuCommand request, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var skuRecordToUpdate = await repository.FindOneAsync(x => x.SKU == request.SkuCode);
+        if (skuRecordToUpdate is null)
+        {
+            throw new ArgumentException($"Sku with code: {request.SkuCode} not found");
+            
+        }
+
+        skuRecordToUpdate.IsOutdated = request.IsOutdated ?? skuRecordToUpdate.IsOutdated;
+        skuRecordToUpdate.Weight = request.Weight ?? skuRecordToUpdate.Weight;
+        skuRecordToUpdate.Height = request.Height ?? skuRecordToUpdate.Height;
+        skuRecordToUpdate.Length = request.Length ?? skuRecordToUpdate.Length;
+        skuRecordToUpdate.Width = request.Width ?? skuRecordToUpdate.Width;
+
+        await repository.UpdateAsync(skuRecordToUpdate);
     }
 }
