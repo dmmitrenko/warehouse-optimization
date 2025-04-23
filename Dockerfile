@@ -7,7 +7,7 @@ COPY src/ ./src/
 RUN dotnet restore WarehouseOptimizer.sln
 
 WORKDIR /app/src
-RUN dotnet publish WarehouseOptimizer.Worker/MaritimeScan.Worker.csproj -c $BUILD_CONFIGURATION -o /app/publish --no-restore
+RUN dotnet publish WarehouseOptimizer.Worker/WarehouseOptimizer.Worker.csproj -c $BUILD_CONFIGURATION -o /app/publish --no-restore
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
