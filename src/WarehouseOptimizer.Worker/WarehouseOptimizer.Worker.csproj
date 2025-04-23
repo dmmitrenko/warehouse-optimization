@@ -19,5 +19,6 @@
     <ProjectReference Include="..\WarehouseOptimizer.Contracts\WarehouseOptimizer.Contracts.csproj" />
     <ProjectReference Include="..\WarehouseOptimizer.DataContext\WarehouseOptimizer.DataContext.csproj" />
     <ProjectReference Include="..\WarehouseOptimizer.Infrastructure\WarehouseOptimizer.Infrastructure.csproj" />
+    <ProjectReference Include="..\WarehouseOptimizer.Application\WarehouseOptimizer.Application.csproj" />
   </ItemGroup>
 </Project>

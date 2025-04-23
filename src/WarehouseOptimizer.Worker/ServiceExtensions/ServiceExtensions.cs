@@ -1,4 +1,5 @@
 ﻿using StackExchange.Redis;
+using WarehouseOptimizer.Application;
 using WarehouseOptimizer.Infrastructure;
 using WarehouseOptimizer.Worker.Queue;
 
@@ -23,6 +24,8 @@ public static class ServiceExtensions
             var redisConnectionString = config.GetConnectionString("Redis") ?? "localhost";
             return ConnectionMultiplexer.Connect(redisConnectionString);
         });
+
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AssemblyReference.Assembly));
 
         services.AddScoped(typeof(IRepository<>), typeof(RedisRepository<>));
     }

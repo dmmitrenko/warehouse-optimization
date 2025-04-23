@@ -5,7 +5,7 @@ using WarehouseOptimizer.Infrastructure;
 
 namespace WarehouseOptimizer.Application.Handlers;
 
-class RegisterSkuCommandHandler(IRepository<SkuRecord> repository) : IRequestHandler<RegisterSkuCommand>
+public class RegisterSkuCommandHandler(IRepository<SkuRecord> repository) : IRequestHandler<RegisterSkuCommand>
 {
     public async Task Handle(RegisterSkuCommand request, CancellationToken cancellationToken)
     {
