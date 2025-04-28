@@ -17,27 +17,27 @@ public class SkuRecord
     /// <summary>
     /// Gets or sets the weight of the product in kilograms.
     /// </summary>
-    public decimal Weight { get; set; }
+    public double Weight { get; set; }
 
     /// <summary>
     /// Gets or sets the volume of the product in cubic meters.
     /// </summary>
-    public decimal Volume => Length * Width * Height;
+    public double Volume => Length * Width * Height;
 
     /// <summary>
     /// Gets or sets the length of the product in meters.
     /// </summary>
-    public decimal Length { get; set; }
+    public double Length { get; set; }
 
     /// <summary>
     /// Gets or sets the width of the product in meters.
     /// </summary>
-    public decimal Width { get; set; }
+    public double Width { get; set; }
 
     /// <summary>
     /// Gets or sets the height of the product in meters.
     /// </summary>
-    public decimal Height { get; set; }
+    public double Height { get; set; }
 
     /// <summary>
     /// Gets or sets the timestamp indicating when the SKU record was created.

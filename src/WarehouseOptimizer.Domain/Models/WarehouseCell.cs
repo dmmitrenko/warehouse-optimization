@@ -16,12 +16,12 @@ public class WarehouseCell
     /// <summary>
     /// Gets or sets the maximum weight capacity of the cell in kilograms.
     /// </summary>
-    public decimal MaxWeight { get; set; }
+    public double MaxWeight { get; set; }
 
     /// <summary>
     /// Gets or sets the maximum volume capacity of the cell in cubic meters.
     /// </summary>
-    public decimal VolumeCapacity { get; set; }
+    public double VolumeCapacity { get; set; }
 
     /// <summary>
     /// Gets or sets the X coordinate (e.g., depth or position) of the cell.
